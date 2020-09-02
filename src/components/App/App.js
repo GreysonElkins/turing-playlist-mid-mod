@@ -5,6 +5,9 @@ import SongSubmit from '../SongSubmit/SongSubmit'
 import SongTablex from '../SongTable/SongTable'
 import SongController from '../SongController/SongController';
 
+
+
+
 class App extends Component {
   constructor() {
     super();
@@ -23,17 +26,23 @@ class App extends Component {
   }
 
   addSongToPlaylist = ( {suggestedSong, suggestedArtist, suggestedListen } ) => {
-    // check if form info is filled out
-    const newSong = {
-      songName: suggestedSong,
-      artistName: suggestedArtist,
-      link: suggestedListen,
-    }
-    ApiHelper.postSong(newSong)
-    const newQueue = this.state.songQueue.concat(newSong)
-    this.setState({ songQueue: newQueue })
-    this.setQueueFromApi()
-  }
+    // if(this.allInputsFilled([suggestedSong, suggestedArtist, suggestedListen])) {
+        // not implemented before error message
+      const newSong = {
+        songName: suggestedSong,
+        artistName: suggestedArtist,
+        link: suggestedListen,
+      }
+      ApiHelper.postSong(newSong)
+      const newQueue = this.state.songQueue.concat(newSong)
+      this.setState({ songQueue: newQueue })
+      this.setQueueFromApi()
+    } 
+
+  allInputsFilled = (inputs) => {
+    let emptyData = inputs.filter(input => input === '')
+    return emptyData.length > 0 ? false : true
+  } 
 
   nextSong = () => {
     debugger
@@ -68,5 +77,6 @@ class App extends Component {
     )
   }
 }
+
 
 export default App;
