@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import ApiHelper from '../../ApiHelper/ApiHelper'
-import SongTable from '../SongTable/SongTable'
+import SongSubmit from '../SongSubmit/SongSubmit'
+import SongTablex from '../SongTable/SongTable'
 import SongController from '../SongController/SongController';
 
 class App extends Component {
@@ -26,7 +27,8 @@ class App extends Component {
         </header>
         <div className="App-background">
           <main>
-            <SongTable allSongs={this.state.allSongs}/>
+            <SongSubmit />
+            <SongTablex allSongs={this.state.allSongs}/>
           </main>
         </div> 
       </div>
