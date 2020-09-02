@@ -36,6 +36,7 @@ class App extends Component {
   }
 
   nextSong = () => {
+    debugger
     const song = this.state.songQueue[0]
     const remainingQueue = this.state.songQueue.slice(1)
     console.log(remainingQueue)

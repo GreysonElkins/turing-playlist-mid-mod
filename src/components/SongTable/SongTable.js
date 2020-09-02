@@ -5,7 +5,7 @@ const SongTable = ({ songQueue }) => {
 
   const tableRowsWithSongs = songQueue.map(song => {
     return (
-      <tr key={`${song.songName}info`}>
+      <tr key={`${song.songName}info${Date.now()}`}>
         <td>{song.songName}</td>
         <td>{song.artistName}</td>
         <td><a href={song.link}>Listen</a></td>
