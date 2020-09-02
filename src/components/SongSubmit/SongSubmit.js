@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
 class SongSubmit extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       suggestedSong: '',
       suggestedArtist: '',
@@ -34,7 +34,10 @@ class SongSubmit extends Component {
           onChange={this.handleChange}
         />
         <button
-          onClick={() => {}}
+          onClick={() => {
+            this.props.addSongToPlaylist(this.state)
+            // clear inputs
+          }}
         >
           Add Song
         </button>

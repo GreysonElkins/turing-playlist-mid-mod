@@ -25,8 +25,8 @@ class App extends Component {
       artistName: suggestedArtist,
       link: suggestedListen,
     }
-
-    // const newQ = 
+    const newQueue = this.state.songQueue.concat(newSong)
+    this.setState({ songQueue: newQueue })
   }
 
   render() {
