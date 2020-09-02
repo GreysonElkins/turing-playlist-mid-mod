@@ -12,6 +12,7 @@ describe('App integration', () => {
   let songInput, artistInput, linkInput, addSongButton
 
   beforeEach(() => {
+    
     render(<App />)
 
     songInput = () => screen.getByPlaceholderText('Song Title')
@@ -19,7 +20,6 @@ describe('App integration', () => {
     linkInput = () => screen.getByPlaceholderText('Link to Listen')
     addSongButton = screen.getByRole('button', { name: 'Add Song' })
 
-    // const button = screen.getByRole('button', { name: 'Add Song' })
     fireEvent.change(songInput(), { target: { value: 'Traipse of Youth' } })
     fireEvent.change(artistInput(), { target: { value: 'Feral Suits' } })
     fireEvent.change(linkInput(), { target: { value: 'Bandcamp.com' } })

@@ -4,7 +4,9 @@ const SongController = ( { changeSong } ) => {
   
   return (
     <div>
-      <button>Next Song</button>
+      <button>
+        Next Song
+      </button>
     </div>
   );
 };

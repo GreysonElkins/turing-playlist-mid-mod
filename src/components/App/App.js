@@ -14,6 +14,10 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.setQueueFromApi()
+  }
+  
+  setQueueFromApi = () => {
     ApiHelper.getSongs()
       .then((allFetchedSongs) => this.setState({songQueue: allFetchedSongs}))
   }
@@ -25,8 +29,10 @@ class App extends Component {
       artistName: suggestedArtist,
       link: suggestedListen,
     }
+    ApiHelper.postSong(newSong)
     const newQueue = this.state.songQueue.concat(newSong)
     this.setState({ songQueue: newQueue })
+    this.setQueueFromApi()
   }
 
   render() {
@@ -39,6 +45,9 @@ class App extends Component {
           <main>
             <SongSubmit 
               addSongToPlaylist={this.addSongToPlaylist}  
+            />
+            <SongController 
+              nextSong={this.nextSong}
             />
             <SongTablex 
               songQueue={this.state.songQueue}
