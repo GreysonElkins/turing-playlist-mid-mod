@@ -19,6 +19,17 @@ class App extends Component {
       .then((allFetchedSongs) => this.setState({allSongs: allFetchedSongs}))
   }
 
+  addSongToPlaylist = ( {suggestedSong, suggestedArtist, suggestedListen } ) => {
+    // check if form info is filled out
+    const newSong = {
+      songName: suggestedSong,
+      artistName: suggestedArtist,
+      link: suggestedListen,
+    }
+
+    // const newQ = 
+  }
+
   render() {
     return (
       <div className="App">
@@ -28,7 +39,10 @@ class App extends Component {
         <div className="App-background">
           <main>
             <SongSubmit />
-            <SongTablex allSongs={this.state.allSongs}/>
+            <SongTablex 
+              allSongs={this.state.allSongs}
+              addSongToPlaylist={this.addSongToPlaylist}  
+            />
           </main>
         </div> 
       </div>

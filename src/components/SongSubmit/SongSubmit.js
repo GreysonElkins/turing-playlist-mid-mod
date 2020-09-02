@@ -33,7 +33,11 @@ class SongSubmit extends Component {
           placeholder="Link to Listen"
           onChange={this.handleChange}
         />
-        <button>Submit</button>
+        <button
+          onClick={}
+        >
+          Add Song
+        </button>
       </>
     )
   }
