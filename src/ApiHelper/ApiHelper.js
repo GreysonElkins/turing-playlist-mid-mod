@@ -16,6 +16,19 @@ const ApiHelper = {
     } catch (error) {
       console.log(error)
     }
+  },
+
+  deleteSong: (id) => {
+    try {
+      return fetch(`http://localhost:8080/api/v1/playlist/${id}`, {
+        method: 'Delete',
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+    } catch (error) {
+      console.log(error)
+    }
   }
 }
 

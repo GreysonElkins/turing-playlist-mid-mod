@@ -44,7 +44,6 @@ class SongSubmit extends Component {
           onClick={() => {
             this.props.addSongToPlaylist(this.state)
             this.clearInputs()
-            // clear inputs
           }}
         >
           Add Song
