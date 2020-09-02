@@ -27,7 +27,7 @@ class SongSubmit extends Component {
       <h2>Add a song to the list!</h2>
         <input 
           name="suggestedSong"
-          placeholder="Song title"
+          placeholder="Song Title"
           onChange={this.handleChange}
           />
         <input 
