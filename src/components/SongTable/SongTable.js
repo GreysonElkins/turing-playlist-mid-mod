@@ -4,7 +4,13 @@ import './SongTable.css'
 const SongTable = ({ allSongs }) => {
 
   const tableRowsWithSongs = allSongs.map(song => {
-    // return a movieCard
+    return (
+      <tr>
+        <td>{song.songName}</td>
+        <td>{song.artistName}</td>
+        <td><a href={song.link}>Listen</a></td>
+      </tr>
+    )
   })
 
   return (
