@@ -41,6 +41,4 @@ describe('SongTable: songs on the DOM', () => {
     expect(songCell).toBeInTheDocument()
     expect(artistCell).toBeInTheDocument()
   })
-
-
 })
