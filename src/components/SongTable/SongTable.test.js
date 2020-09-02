@@ -24,5 +24,23 @@ describe('SongTable: songs on the DOM', () => {
     render(<SongTable songQueue={songs}/>)
   })
 
+  it(`should populate a table with 2 rows plus however many rows
+    per songs, (in this case 2)`, () => {
+      const table = screen.getByRole('table')
+      const rows = screen.getAllByRole('row')
+      expect(table).toBeInTheDocument()
+      expect(rows).toHaveLength(4)
+    })
+
+  it(`should have a title "songs" in row 1, and specific column headers in row 2`, () => {
+    const rows = screen.getAllByRole('row')
+    const titleRow = screen.getByRole('row', { name: 'Songs' })
+    const songCell = screen.getByRole('cell', { name: 'Song' })
+    const artistCell = screen.getByRole('cell', { name: 'Artist' })
+    expect(rows[0] === titleRow).toBe(true)
+    expect(songCell).toBeInTheDocument()
+    expect(artistCell).toBeInTheDocument()
+  })
+
 
 })
