@@ -1,9 +1,9 @@
 import React from 'react'
 import './SongTable.css'
 
-const SongTable = ({ allSongs }) => {
+const SongTable = ({ songQueue }) => {
 
-  const tableRowsWithSongs = allSongs.map(song => {
+  const tableRowsWithSongs = songQueue.map(song => {
     return (
       <tr>
         <td>{song.songName}</td>

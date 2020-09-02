@@ -9,14 +9,13 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      allSongs: [],     
       songQueue: []
     }
   }
 
   componentDidMount() {
     ApiHelper.getSongs()
-      .then((allFetchedSongs) => this.setState({allSongs: allFetchedSongs}))
+      .then((allFetchedSongs) => this.setState({songQueue: allFetchedSongs}))
   }
 
   addSongToPlaylist = ( {suggestedSong, suggestedArtist, suggestedListen } ) => {
@@ -38,10 +37,11 @@ class App extends Component {
         </header>
         <div className="App-background">
           <main>
-            <SongSubmit />
-            <SongTablex 
-              allSongs={this.state.allSongs}
+            <SongSubmit 
               addSongToPlaylist={this.addSongToPlaylist}  
+            />
+            <SongTablex 
+              songQueue={this.state.songQueue}
             />
           </main>
         </div> 

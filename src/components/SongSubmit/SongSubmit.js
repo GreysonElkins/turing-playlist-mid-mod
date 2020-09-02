@@ -34,7 +34,7 @@ class SongSubmit extends Component {
           onChange={this.handleChange}
         />
         <button
-          onClick={}
+          onClick={() => {}}
         >
           Add Song
         </button>
