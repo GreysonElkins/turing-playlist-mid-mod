@@ -14,6 +14,13 @@ class SongSubmit extends Component {
     this.setState({ [event.target.name]: event.target.value })
   }
 
+  clearInputs = () => {
+    const inputs = document.querySelectorAll('input') 
+    for(let i = 0; i < inputs.length; i++) {
+      inputs[i].value = ''
+    }
+  }
+
   render() {
     return (
       <>
@@ -36,6 +43,7 @@ class SongSubmit extends Component {
         <button
           onClick={() => {
             this.props.addSongToPlaylist(this.state)
+            this.clearInputs()
             // clear inputs
           }}
         >
