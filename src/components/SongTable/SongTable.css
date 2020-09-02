@@ -1,0 +1,9 @@
+table {
+  background-color: white;
+  width: 20em;
+}
+
+tr {
+  display: flex;
+  justify-content: space-around;
+}
